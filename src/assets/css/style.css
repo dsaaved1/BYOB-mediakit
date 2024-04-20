@@ -49,7 +49,6 @@ body {
     background-color: #30313A;
 }
 
-/* -- Info-Page-Start------ */
 .info {
     background-color: #30313A;
     padding: 30px 0;
@@ -489,7 +488,7 @@ ul.socailStat_instaView{
     }
     ul.socailStat_instaView li .title{
       display: inline-block;
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 400;
     }
     ul.socailStat_instaView li .icon img{
@@ -517,7 +516,7 @@ ul.socailStat_gridView li{
 }
 ul.socailStat_gridView li .title{
   display: inline-block;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
 }
 ul.socailStat_gridView li .icon img{
@@ -554,9 +553,9 @@ ul.segment_tab {
 ul.segment_tab li {
     margin: 0px 10px;
 }
-ul.segment_tab li a{
+ul.segment_tab li button{
     color: #FFFFFF80;
-    font-size: 14px;
+    font-size: 12px;
     font-style: italic;
 }
 ul.segment_tab li a.active{
@@ -576,6 +575,7 @@ ul.segment_tab li a.active{
 .right_panel-data .title{
     color: #fff;
     font-family: "Inter";
+    font-size: 12px;
 }
 .right_panel-data ul{
     padding: 25px 0px 15px 15px;
@@ -584,32 +584,33 @@ ul.segment_tab li a.active{
     color: #fff;
     font-family: "Inter";
     padding: 10px 0px;
+    font-size: 12px;
     display: flex;
     align-items: center;
 }
 .right_panel-data ul li .genr {
     display: block;
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     background: #3755F3;
     border-radius: 100%;
-    margin-right: 4px;
+    margin-right: 6px;
 }
 .right_panel-data ul li .age {
     display: block;
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     background: #EA79BA;
     border-radius: 100%;
-    margin-right: 4px;
+    margin-right: 6px;
 }
 .right_panel-data ul li .countries {
     display: block;
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     background: #27d157;
     border-radius: 100%;
-    margin-right: 4px;
+    margin-right: 6px;
 }
 .chart_value .title{
     font-family: 'Inter';
@@ -761,7 +762,7 @@ ul.social_status-list li{
 }
 ul.social_status-list li .title{
   display: flex;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   white-space: nowrap;
 }
@@ -1011,7 +1012,7 @@ ul.social_status-list li .count{
       }
 
       .CircularProgressbar {
-        width: 60% !important;
+        width: 40% !important;
         margin-top: 10px;
     }
 

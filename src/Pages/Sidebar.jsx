@@ -5,8 +5,7 @@ function Sidebar() {
 
     return (
         <>
-            <>
-               
+            <>   
                     <div className="sidebar">
                         <div className="close-toggle">
                             <i className="fa-solid fa-xmark" />

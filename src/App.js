@@ -25,8 +25,8 @@ import "./assets/js/custom.js";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Dashboard from './Pages/Dashboard';
 import BasePage from './Pages/Base.jsx';
-import LeaderboardList from './Pages/Leaderboard/LeaderboardList';
-import LeaderboardDetails from './Pages/Leaderboard/LeaderboardDetails';
+import LeaderboardList from './Pages/Dashboard/SocialMedia';
+import LeaderboardDetails from './Pages/Dashboard/SocialMediaDeals';
 
 
 

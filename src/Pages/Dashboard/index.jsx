@@ -2,10 +2,11 @@ import React, { memo, useContext, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import CountUp from 'react-countup';
 import { CircularProgressbar } from 'react-circular-progressbar';
-import LeaderboardList from "../Leaderboard/LeaderboardList";
+import SocialMedia from "./SocialMedia";
 import {userData } from '../../data';
 
 const formatNumber = (number) => {
+    
     if (number >= 1000000) {
         return (number / 1000000).toFixed(1) + 'M';
     } else if (number >= 1000) {
@@ -38,7 +39,7 @@ function Index() {
         // Simulate loading time
         const timeout = setTimeout(() => {
             setProgress(25);
-        }, 2000);
+        }, 300);
 
         return () => clearTimeout(timeout);
     }, []);
@@ -70,15 +71,15 @@ function Index() {
                                         <ul>
                                             <li>
                                                 <img src="/assets/images/tiktok.svg" alt="tiktok" />
-                                                <span>{formatNumber(userData.socialMedia.tikTok)}</span>
+                                                <span>{userData.socialMedia.tikTok.statistics.followers}</span>
                                             </li>
                                             <li>
                                                 <img src="/assets/images/insta.svg" alt="insta" />
-                                                <span>{formatNumber(userData.socialMedia.instagram)}</span>
+                                                <span>{userData.socialMedia.instagram.statistics.followers}</span>
                                             </li>
                                             <li>
                                                 <img src="/assets/images/youtube.svg" alt="youtube" />
-                                                <span>{formatNumber(userData.socialMedia.youtube)}</span>
+                                                <span>{"34223"}</span>
                                             </li>
                                             <li>
                                                 <Link to="#" className="main-btn">
@@ -119,14 +120,7 @@ function Index() {
                         <div className="count">
                             <h4>Total Followers</h4>
                             <small>Across all platforms</small>
-                            <strong><CountUp end={6450023} duration={1} /></strong>
-                            {/* <strong><CountUp start={0} end={6450023} delay={0}>
-                                    {({ countUpRef }) => (
-                                        <div>
-                                            <span ref={countUpRef} />
-                                        </div>
-                                    )}
-                                </CountUp></strong> */}
+                            <strong><CountUp end={6450023} duration={1.5} /></strong>
                         </div>
                     </div>
                     <div className="col-12 col-md-3 mb-4 mb-md-0">
@@ -140,11 +134,11 @@ function Index() {
                             />
                         </div>
                     </div>
-                    <div className="col-12 col-md-3">
+                    <div className="col-12 col-md-3 mb-4 mb-md-0">
                         <div className="count">
                             <h4>Average Views</h4>
                             <small>Per Video on TikTok</small>
-                            <strong><CountUp end={2524} duration={1} />k</strong>
+                            <strong><CountUp end={2524} duration={1.5} />k</strong>
                         </div>
                     </div>
                     <div className="col-6 col-md-3">
@@ -158,7 +152,7 @@ function Index() {
                     </div>
                 </div>
 
-                <LeaderboardList />
+                <SocialMedia />
 
 {/* 
                 <div className="row info-btm">

@@ -179,7 +179,7 @@ function ChartTabs(props) {
 
 
                 <div className="right_panel-data">
-                    <h5 className="title">More</h5>
+                    <h5 className="title">More:</h5>
                     <ul>
                         {sideActiveTab !== "country" && <li onClick={() => SideTabChange('country')}>
                             <span className="countries" />

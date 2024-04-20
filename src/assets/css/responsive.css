@@ -31,8 +31,9 @@
 }
 
 @media screen and (max-width: 768px) {
-    .info .round-progress {
-        max-width: 100%;
+    
+    .info .count {
+        max-width: 50%;
     }
     .info .profile h1 {
         max-width: 100%;
@@ -47,71 +48,85 @@
     .info .count-top {
         margin-top: 30px;
     }
-/* sayan code */
-.info .container-fluid {
-    padding: 0px 15px;
-}
-.stat_distribute-panel {
-    padding: 0;
-}
-ul.social_status-list {
-    margin-top: 40px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-ul.social_status-list li {
-    margin: 10px 0px;
-    flex: 0 0 48%;
-}
-ul.social_status-list li .title {
-    display: inherit;
-}
-.stat_distribute-panel .distribure_row {
-    width: 100%;
-}
-.stat_sheet-inner .stat_sheet-colmn {
-    max-width: 100%;
-}
 
-ul.social_small-data {
-    display: flex;
-    margin: 50px 0px 20px 0px;
-}
-ul.socailStat_gridView {
-    margin-top: 25px;
-}
+    .info .container-fluid {
+        padding: 0px 15px;
+    }
+    .stat_distribute-panel {
+        padding: 0;
+    }
+    ul.social_status-list {
+        margin-top: 40px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    ul.social_status-list li {
+        margin: 10px 0px;
+        flex: 0 0 48%;
+    }
+    ul.social_status-list li .title {
+        display: inherit;
+    }
+    .stat_distribute-panel .distribure_row {
+        width: 100%;
+    }
+    .stat_sheet-inner .stat_sheet-colmn {
+        max-width: 100%;
+    }
 
-.social_stat-wrap {
-    margin-top: 50px;
-}
-.social_data-container {
-  padding: 20px 0px;
-}
-.social_stat-wrap .stat_piechart-wrap {
-    display: flex;
-    text-align: center;
-}
-.pie_chart-row {
-    width: 50%;
-    margin: 0 auto; 
-}
-.chart_flow-row {
-    display: block;
-}
-.right_panel-data {
-    width: 100%;
-    padding: 10px 0px;
-}
-.right_panel-data ul {
-    padding:10px 0px
-}
-ul.socailStat_instaView {
-    margin-top: 30px;
-}
-ul.socailStat_instaView li {
-    text-align: left;
-}
+    ul.social_small-data {
+        display: flex;
+        margin: 50px 0px 20px 0px;
+    }
+    ul.socailStat_gridView {
+        margin-top: 25px;
+    }
 
+    .social_stat-wrap {
+        margin-top: 50px;
+    }
+    .social_data-container {
+    padding: 20px 0px;
+    }
+    .social_stat-wrap .stat_piechart-wrap {
+        display: flex;
+        text-align: center;
+    }
+    .pie_chart-row {
+        width: 50%;
+        margin: 0 auto; 
+    }
+    .chart_flow-row {
+        display: block;
+    }
+    .right_panel-data {
+        width: 100%;
+        padding: 10px 0px;
+    }
+    .right_panel-data ul {
+        padding:10px 0px
+    }
+    ul.socailStat_instaView {
+        margin-top: 30px;
+    }
+    ul.socailStat_instaView li {
+        text-align: left;
+    }
+
+    .CircularProgressbar {
+        width: 50% !important;
+        margin-top: 10px;
+    }
+    .round-progress .progress-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .round-progress .progress-wrapper small {
+        margin-bottom: 10px;
+    }
 }
 @media screen and (max-width: 576px) {
     .info .info-btm h3 {
