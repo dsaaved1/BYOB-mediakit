@@ -2,9 +2,7 @@ import React, { memo, useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Line } from 'rc-progress';
 import ProgressBar from "@ramonak/react-progress-bar";
-import { tik_tok, instragram, userData } from '../../data';
-
-
+import { userData } from '../../data';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -29,6 +27,13 @@ const options = {
 
     }
 };
+
+const colorPairs = [
+    { bgColor: '#27d157', baseBgColor: '#d7ebdd' },
+    { bgColor: '#2ed3c9', baseBgColor: '#c8efed' },
+    { bgColor: '#5417d7', baseBgColor: '#c4b7e0' }
+];
+
 
 
 function SocialMediaDeals() {
@@ -202,30 +207,32 @@ function SocialMediaDeals() {
                                            <div className="col-md-4"></div>
                                        </div>
                                    </div>
+                            
                                    <div className="mt-4">
-                                       <div className="progress-bar-1 distribute_progress">
-                                           <ProgressBar completed={ChartData?.demographics?.age?.bar1} height={"11px"} bgColor="#27d157" baseBgColor="#d7ebdd" labelSize={"9px"} />
-                                       </div>
-                                       <div className="progress-bar-2 distribute_progress">
-                                           <ProgressBar completed={ChartData?.demographics?.age?.bar2} height={"11px"} bgColor="#2ed3c9" baseBgColor="#c8efed" labelSize={"9px"} />
-                                       </div>
-                                       <div className="progress-bar-3 distribute_progress">
-                                           <ProgressBar completed={ChartData?.demographics?.age?.bar3} height={"11px"} bgColor="#5417d7" baseBgColor="#c4b7e0" labelSize={"9px"} />
-                                       </div>
-                                   </div>
-                                   <div className="mt-4">
-                                       <ul className="gender_indicator">
-                                           <li>
-                                               <span className="fourteen" /> 14-17
-                                           </li>
-                                           <li>
-                                               <span className="eighteen" /> 18-24
-                                           </li>
-                                           <li>
-                                               <span className="twentyfive" /> 25+
-                                           </li>
-                                       </ul>
-                                   </div>
+                                        {ChartData?.demographics?.age?.bars.map((bar, index) => {
+                                        const colorPair = colorPairs[index % colorPairs.length];
+                                        return (
+                                            <div key={index} className={`progress-bar-${index + 1} distribute_progress`}>
+                                                <ProgressBar 
+                                                    completed={bar.value} 
+                                                    height={"11px"} 
+                                                    bgColor={colorPair.bgColor} 
+                                                    baseBgColor={colorPair.baseBgColor} 
+                                                    labelSize={"9px"} 
+                                                />
+                                            </div>
+                                            );
+                                        })}
+                                    </div>
+                                    <div className="mt-4">
+                                        <ul className="gender_indicator">
+                                            {ChartData?.demographics?.age?.bars.map((bar, index) => (
+                                                <li key={index}>
+                                                    <span className={bar.name.replace('+', '').replace('-', '').toLowerCase()} /> {bar.name}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
                                </div>
                            </div>
                            <div className="col-md-4 d-flex">

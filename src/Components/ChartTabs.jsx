@@ -4,7 +4,16 @@ import ProgressBar from "@ramonak/react-progress-bar";
 import DoughnutChart from './Chart/DoughnutChart';
 
 
+const colorPairs = [
+    { bgColor: '#27d157', baseBgColor: '#d7ebdd' },
+    { bgColor: '#2ed3c9', baseBgColor: '#c8efed' },
+    { bgColor: '#5417d7', baseBgColor: '#c4b7e0' }
+];
 
+const colorPairs2 = [
+    { bgColor: '#5417d7', baseBgColor: '#c4b7e0' },
+    { bgColor: '#d32eb9', baseBgColor: '#efc8e4' }
+];
 
 function ChartTabs(props) {
     const [activeTab, setActiveTab] = useState('tab1');
@@ -32,7 +41,7 @@ function ChartTabs(props) {
                             <div className="chart_flow-row">
                                 <div className="chart_colmn">
                                     {/* <div className="pieID pie"></div> */}
-                                    <DoughnutChart data={props.chartData.data1} />
+                                    <DoughnutChart data={props.chartData.demographics?.countries?.data1} />
                                 </div>
 
                             </div>
@@ -49,7 +58,7 @@ function ChartTabs(props) {
                             <div className="chart_flow-row">
                                 <div className="chart_colmn">
                                     {/* <div className="pieID pie"></div> */}
-                                    <DoughnutChart data={props.chartData.data2} />
+                                    <DoughnutChart data={props.chartData.demographics?.countries?.data2} />
                                 </div>
 
                             </div>
@@ -66,7 +75,7 @@ function ChartTabs(props) {
                             <div className="chart_flow-row">
                                 <div className="chart_colmn">
                                     {/* <div className="pieID pie"></div> */}
-                                    <DoughnutChart data={props.chartData.data3} />
+                                    <DoughnutChart data={props.chartData.demographics?.countries?.data3} />
                                 </div>
 
                             </div>
@@ -110,27 +119,28 @@ function ChartTabs(props) {
                             </div>
                         </div>
                         <div className="mt-4">
-                            <div className="progress-bar-1 distribute_progress">
-                                <ProgressBar completed={props.chartData.age.bar1} height={"11px"} bgColor="#27d157" baseBgColor="#d7ebdd" labelSize={"9px"} />
-                            </div>
-                            <div className="progress-bar-2 distribute_progress">
-                                <ProgressBar completed={props.chartData.age.bar2} height={"11px"} bgColor="#2ed3c9" baseBgColor="#c8efed" labelSize={"9px"} />
-                            </div>
-                            <div className="progress-bar-3 distribute_progress">
-                                <ProgressBar completed={props.chartData.age.bar3} height={"11px"} bgColor="#5417d7" baseBgColor="#c4b7e0" labelSize={"9px"} />
-                            </div>
+                            {props.chartData.demographics?.age?.bars?.map((bar, index) => {
+                                const colorPair = colorPairs[index % colorPairs.length];
+                                return (
+                                    <div key={index} className={`progress-bar-${index + 1} distribute_progress`}>
+                                        <ProgressBar 
+                                            completed={bar.value} 
+                                            height={"11px"} 
+                                            bgColor={colorPair.bgColor} 
+                                            baseBgColor={colorPair.baseBgColor} 
+                                            labelSize={"9px"} 
+                                        />
+                                    </div>
+                                );
+                            })}
                         </div>
                         <div className="mt-4">
                             <ul className="gender_indicator">
-                                <li>
-                                    <span className="fourteen" /> 14-17
-                                </li>
-                                <li>
-                                    <span className="eighteen" /> 18-24
-                                </li>
-                                <li>
-                                    <span className="twentyfive" /> 25+
-                                </li>
+                                {props.chartData.demographics?.age?.bars?.map((bar, index) => (
+                                    <li key={index}>
+                                        <span className={bar.name.replace('+', '').replace('-', '').toLowerCase()} /> {bar.name}
+                                    </li>
+                                ))}
                             </ul>
                         </div>
                     </div>
@@ -148,30 +158,32 @@ function ChartTabs(props) {
                                     </div>
                                 </div>
                                 <div className="col-md-4">
-                                    {/* <input
-                                                type="text"
-                                                className="datepicker dataField"
-                                                placeholder="from"
-                                            /> */}
                                 </div>
                             </div>
                         </div>
                         <div className="mt-4 genderProgress">
-                            <div className="genderWomen distribute_progress">
-                                <ProgressBar completed={props.chartData.gender.women} height={"11px"} bgColor="#5417d7" baseBgColor="#c4b7e0" labelSize={"10px"} />
-                            </div>
-                            <div className="genderMen distribute_progress">
-                                <ProgressBar completed={props.chartData.gender.men} height={"11px"} bgColor="#d32eb9" baseBgColor="#efc8e4" labelSize={"10px"} />
-                            </div>
+                            {props.chartData.demographics?.gender?.bars.map((bar, index) => {
+                                const colorPair = colorPairs2[index % colorPairs.length];
+                                return (
+                                    <div key={index} className={`gender${bar.name} distribute_progress`}>
+                                        <ProgressBar 
+                                            completed={bar.value} 
+                                            height={"11px"} 
+                                            bgColor={colorPair.bgColor} 
+                                            baseBgColor={colorPair.baseBgColor} 
+                                            labelSize={"10px"} 
+                                        />
+                                    </div>
+                                );
+                            })}
                         </div>
                         <div className="mt-4">
                             <ul className="gender_indicator">
-                                <li>
-                                    <span className="women" /> Women
-                                </li>
-                                <li>
-                                    <span className="men" /> Men
-                                </li>
+                                {props.chartData.demographics?.gender?.bars.map((bar, index) => (
+                                    <li key={index}>
+                                        <span className={bar.name.toLowerCase()} /> {bar.name}
+                                    </li>
+                                ))}
                             </ul>
                         </div>
                     </div>

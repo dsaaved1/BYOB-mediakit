@@ -6,11 +6,22 @@ export const userData = {
         tikTok: {
             name: "Tik Tok",
             logo: "/assets/images/tiktok.svg",
+            lastUpdated: "12/04/24",
+            rankings: [  
+                {
+                    value: "TOP 3%",
+                    name: "Business"
+                },
+                {
+                    value: "TOP 23%",
+                    name: "Gym"
+                }
+            ],
             statistics: {
                 followers: 858,
                 likes: 184,
                 totalReach: 215,
-                engagement: "9%",
+                engagement: 9,
                 totalViews: 4730,
                 totalVideos: 147,
             },
@@ -26,13 +37,17 @@ export const userData = {
             },
             demographics: {
                 gender: {
-                    men: 11,
-                    women: 46,
+                    bars: [
+                        { name: 'Women', value: 60 },
+                        { name: 'Men', value: 40 }
+                    ]
                 },
                 age: {
-                    bar1: 18,
-                    bar2: 100,
-                    bar3: 66,
+                    bars: [
+                        { name: '14-17', value: 18 },
+                        { name: '18-24', value: 21 },
+                        { name: '25+', value: 66 }
+                    ]
                 },
                 countries: {
                     data1: {
@@ -102,7 +117,18 @@ export const userData = {
         },
         instagram: {
             name: "Instagram",
-            logo: "/assets/images/instagram-logo.svg",
+            logo: "/assets/images/instagram.svg",
+            lastUpdated: "12/04/24",
+            rankings: [  
+                {
+                    value: "TOP 3%",
+                    name: "Business"
+                },
+                {
+                    value: "TOP 23%",
+                    name: "Gym"
+                }
+            ],
             statistics: {
                 followers: 1334,
                 likes: 1840,
@@ -120,13 +146,17 @@ export const userData = {
             },
             demographics: {
                 gender: {
-                    men: 20,
-                    women: 80,
+                    bars: [
+                        { name: 'Women', value: 60 },
+                        { name: 'Men', value: 40 }
+                    ]
                 },
                 age: {
-                    bar1: 18,
-                    bar2: 100,
-                    bar3: 60,
+                    bars: [
+                        { name: '14-17', value: 18 },
+                        { name: '18-24', value: 20 },
+                        { name: '25+', value: 46 }
+                    ]
                 },
                 countries: {
                     data1: {
