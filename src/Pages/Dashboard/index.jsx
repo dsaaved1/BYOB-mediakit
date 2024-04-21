@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import CountUp from 'react-countup';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import SocialMedia from "./SocialMedia";
-import {userData } from '../../data';
+import {userData} from '../../data';
 
 
 function Index() {
@@ -29,11 +29,12 @@ function Index() {
         // Simulate loading time
         const timeout = setTimeout(() => {
             setProgress(25);
-        }, 300);
+        }, 700);
 
         return () => clearTimeout(timeout);
     }, []);
-    return (<>
+    return (
+    <>
         <section className="info">
             <div className="container">
                 
@@ -56,21 +57,19 @@ function Index() {
                                     <div className="details">
                                         <div className="name-align">
                                             <h2>{userData.name}</h2>
-                                            <img src="/assets/images/usa.png" alt="country" />
+                                            {/* <img src={`/assets/images/usa.png`} alt="country" /> */}
                                         </div>
                                         <ul>
-                                            <li>
-                                                <img src="/assets/images/tiktok.svg" alt="tiktok" />
-                                                <span>{userData.socialMedia.tikTok.statistics.followers}</span>
-                                            </li>
-                                            <li>
-                                                <img src="/assets/images/insta.svg" alt="insta" />
-                                                <span>{userData.socialMedia.instagram.statistics.followers}</span>
-                                            </li>
-                                            <li>
-                                                <img src="/assets/images/youtube.svg" alt="youtube" />
-                                                <span>{"34223"}</span>
-                                            </li>
+                                            {Object.keys(userData.socialMedia).map(platform => (
+                                                <li>
+                                                    <img 
+                                                        src={`/assets/images/${platform}.svg`} 
+                                                        alt={platform} 
+                                                    />
+                                                    <span>{platform === 'youtube' ? userData.socialMedia[platform].statistics.subscribers : userData.socialMedia[platform].statistics.followers}</span>
+                                                </li>
+                                            ))}
+                                            
                                             <li>
                                                 <Link to="#" className="main-btn">
                                                     Contact Info
@@ -89,7 +88,7 @@ function Index() {
                                 </div>
                                 <div className="col-md-6">
                                     <div className="vid">
-                                        <video id="video-play" poster="/assets/images/video-thumb.png" ref={videoRef}>
+                                        <video id="video-play" poster={userData.videoThumb} ref={videoRef}>
                                             <source src={userData.video} type="video/mp4" />
                                         </video>
                                         <div className="ply-btn">
@@ -142,12 +141,13 @@ function Index() {
                     </div>
                 </div>
 
-                <SocialMedia />
+                <SocialMedia userData={userData} />
 
 
             </div>
         </section>
-    </>)
+    </>
+    )
 };
 
 export default memo(Index);

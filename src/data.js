@@ -9,11 +9,11 @@ export const userData = {
             lastUpdated: "12/04/24",
             rankings: [  
                 {
-                    value: "TOP 3%",
+                    value: "TOP 6%",
                     name: "Business"
                 },
                 {
-                    value: "TOP 23%",
+                    value: "TOP 13%",
                     name: "Gym"
                 }
             ],
@@ -38,15 +38,16 @@ export const userData = {
             demographics: {
                 gender: {
                     bars: [
-                        { name: 'Women', value: 60 },
-                        { name: 'Men', value: 40 }
+                        { name: 'Women', value: 50 },
+                        { name: 'Men', value: 50 }
                     ]
                 },
                 age: {
                     bars: [
-                        { name: '14-17', value: 18 },
-                        { name: '18-24', value: 21 },
-                        { name: '25+', value: 66 }
+                        { name: '14-17', value: 15 },
+                        { name: '18-24', value: 25 },
+                        { name: '25-34', value: 40 },
+                        { name: '35+', value: 20 }
                     ]
                 },
                 countries: {
@@ -55,7 +56,7 @@ export const userData = {
                         datasets: [
                             {
                                 label: '# of Votes',
-                                data: [12, 30, 10],
+                                data: [80, 10, 10],
                                 backgroundColor: [
                                     'rgba(255, 99, 132, 1)',
                                     'rgba(255, 206, 86, 1)',
@@ -66,11 +67,11 @@ export const userData = {
                         ],
                     },
                     data2: {
-                        labels: ['Usa', 'Mexico', 'Canada', 'Other', 'India', 'Oman', 'Qatar', 'Ireland'],
+                        labels: ['Usa', 'Mexico', 'Canada', 'Other', 'UK', 'Australia', 'Germany', 'France'],
                         datasets: [
                             {
                                 label: '# of Votes',
-                                data: [12, 19, 3, 5, 6, 3, 4, 7],
+                                data: [80, 5, 3, 7, 2, 1.5, 0.5, 0.5],
                                 backgroundColor: [
                                     'rgba(255, 99, 132, 1)',
                                     'rgba(54, 162, 235, 1)',
@@ -85,14 +86,12 @@ export const userData = {
                             },
                         ],
                     },
-               
-               
                     data3: {
-                        labels: ['Usa', 'Mexico', 'Canada', 'Other', 'India', 'Oman', 'Qatar', 'Ireland', 'Russia', 'Andorra', 'Brazil', 'Spain'],
+                        labels: ['Usa', 'Mexico', 'Canada', 'Other', 'UK', 'Australia', 'Germany', 'France', 'Italy', 'Spain', 'Brazil', 'India'],
                         datasets: [
                             {
                                 label: '# of Votes',
-                                data: [12, 19, 3, 5, 6, 3, 4, 7, 8, 3, 4, 3],
+                                data: [80, 5, 3, 7, 2, 1.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5],
                                 backgroundColor: [
                                     'rgba(255, 99, 132, 1)',
                                     'rgba(54, 162, 235, 1)',
@@ -111,9 +110,8 @@ export const userData = {
                             },
                         ],
                     },
-               
                 },
-            },
+            }
         },
         instagram: {
             name: "Instagram",
@@ -121,11 +119,11 @@ export const userData = {
             lastUpdated: "12/04/24",
             rankings: [  
                 {
-                    value: "TOP 3%",
+                    value: "TOP 1%",
                     name: "Business"
                 },
                 {
-                    value: "TOP 23%",
+                    value: "TOP 3%",
                     name: "Gym"
                 }
             ],
@@ -147,15 +145,17 @@ export const userData = {
             demographics: {
                 gender: {
                     bars: [
-                        { name: 'Women', value: 60 },
-                        { name: 'Men', value: 40 }
+                        { name: 'Women', value: 58 },
+                        { name: 'Men', value: 42 }
                     ]
                 },
                 age: {
                     bars: [
-                        { name: '14-17', value: 18 },
-                        { name: '18-24', value: 20 },
-                        { name: '25+', value: 46 }
+                        { name: '13-17', value: 15 },
+                        { name: '18-24', value: 30 },
+                        { name: '25-34', value: 40 },
+                        { name: '35-44', value: 10 },
+                        { name: '45+', value: 5 }
                     ]
                 },
                 countries: {
@@ -164,7 +164,7 @@ export const userData = {
                         datasets: [
                             {
                                 label: '# of Votes',
-                                data: [12, 3, 27],
+                                data: [85, 5, 10],
                                 backgroundColor: [
                                     'rgba(255, 99, 132, 1)',
                                     'rgba(255, 206, 86, 1)',
@@ -174,15 +174,12 @@ export const userData = {
                             },
                         ],
                     },
-               
-               
-               
                     data2: {
-                        labels: ['Usa', 'Mexico', 'Canada', 'Other', 'India', 'Oman', 'Qatar', 'Ireland'],
+                        labels: ['Usa', 'Mexico', 'Canada', 'Other', 'UK', 'Australia', 'Germany', 'France'],
                         datasets: [
                             {
                                 label: '# of Votes',
-                                data: [12, 19, 3, 5, 6, 3, 4, 7],
+                                data: [85, 4, 3, 5, 1.5, 0.5, 0.5, 0.5],
                                 backgroundColor: [
                                     'rgba(255, 99, 132, 1)',
                                     'rgba(54, 162, 235, 1)',
@@ -197,14 +194,12 @@ export const userData = {
                             },
                         ],
                     },
-               
-               
                     data3: {
-                        labels: ['Usa', 'Mexico', 'Canada', 'Other', 'India', 'Oman', 'Qatar', 'Ireland', 'Russia', 'Andorra', 'Brazil', 'Spain'],
+                        labels: ['Usa', 'Mexico', 'Canada', 'Other', 'UK', 'Australia', 'Germany', 'France', 'Italy', 'Spain', 'Brazil', 'India'],
                         datasets: [
                             {
                                 label: '# of Votes',
-                                data: [12, 19, 3, 5, 6, 3, 4, 7, 8, 3, 4, 3],
+                                data: [85, 4, 3, 5, 1.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5],
                                 backgroundColor: [
                                     'rgba(255, 99, 132, 1)',
                                     'rgba(54, 162, 235, 1)',
@@ -230,162 +225,227 @@ export const userData = {
     quote: "I like to build cool shit",
     industries: ["Business advice", "Gym"],
     video: "/assets/Video/video.mp4", 
+    videoThumb: "/assets/images/video-thumb.png",
     about: "Alex is a first-generation Iranian-American entrepreneur, investor, and philanthropist. In 2013, he started his first brick & mortar business. Within three years, he successfully scaled his business to six locations. He then sold his locations to transition to the turnaround business."
 };
 
-
-
-export const tik_tok = {
-    data1: {
-        labels: ['Usa', 'Canada', 'Other'],
-        datasets: [
-            {
-                label: '# of Votes',
-                data: [12, 30, 10],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                ],
-                borderWidth: 1,
+export const userData2 = {
+    name: "José Ramones",
+    profilePhoto: "/assets/images/JoseProfile.jpeg",
+    country: "Mexico",
+    socialMedia: {
+        tikTok: {
+            name: "Tik Tok",
+            logo: "/assets/images/tiktok.svg",
+            lastUpdated: "12/04/24",
+            rankings: [  
+                {
+                    value: "TOP 1%",
+                    name: "Comedy"
+                },
+                {
+                    value: "TOP 5%",
+                    name: "Entertainment"
+                }
+            ],
+            statistics: {
+                followers: 2000,
+                likes: 1500,
+                totalReach: 4000,
+                engagement: 10,
+                totalViews: 6000,
+                totalVideos: 120,
             },
-        ],
-    },
-
-
-
-    data2: {
-        labels: ['Usa', 'Mexico', 'Canada', 'Other', 'India', 'Oman', 'Qatar', 'Ireland'],
-        datasets: [
-            {
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 6, 3, 4, 7],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(50, 171, 195, 0.8)',
-                    'rgba(172, 213, 41, 0.8)',
-                    'rgba(135, 43, 130, 0.8)',
-                    'rgba(171, 156, 18, 0.8)'
-                ],
-                borderWidth: 1,
+            packageOptions: {
+                "1 Video": "250$",
+                "3 Video": "550$",
+                "5 Video": "800$",
             },
-        ],
-    },
-
-
-    data3: {
-        labels: ['Usa', 'Mexico', 'Canada', 'Other', 'India', 'Oman', 'Qatar', 'Ireland', 'Russia', 'Andorra', 'Brazil', 'Spain'],
-        datasets: [
-            {
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 6, 3, 4, 7, 8, 3, 4, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(50, 171, 195, 0.8)',
-                    'rgba(172, 213, 41, 0.8)',
-                    'rgba(135, 43, 130, 0.8)',
-                    'rgba(171, 156, 18, 0.8)',
-                    'rgba(176, 19, 8, 0.8)',
-                    'rgba(141, 176, 8, 0.8)',
-                    'rgba(24, 211, 83, 0.8)',
-                    'rgba(15, 137, 108, 0.8)'
-                ],
-                borderWidth: 1,
+            rateSheet: {
+                "Dedicated TikTok": "300$",
+                "TikTok + Reel": "500$",
+                "Integrated TikTok": "700$",
             },
-        ],
-    },
-
-    gender: {
-        men: 11,
-        women: 46
-    },
-    age: {
-        bar1: 18,
-        bar2: 100,
-        bar3: 66
-    },
-}
-
-export const instragram = {
-    data1: {
-        labels: ['Usa', 'Canada', 'Other'],
-        datasets: [
-            {
-                label: '# of Votes',
-                data: [12, 3, 27],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                ],
-                borderWidth: 1,
+            demographics: {
+                gender: {
+                    bars: [
+                        { name: 'Women', value: 55 },
+                        { name: 'Men', value: 45 }
+                    ]
+                },
+                age: {
+                    bars: [
+                        { name: '14-17', value: 20 },
+                        { name: '18-24', value: 50 },
+                        { name: '25+', value: 30 }
+                    ]
+                },
+                countries: {
+                    data1: {
+                        labels: ['Mexico', 'USA', 'Other'],
+                        datasets: [
+                            {
+                                label: '# of Votes',
+                                data: [70, 20, 10],
+                                backgroundColor: [
+                                    'rgba(206, 86, 255, 1)',
+                                    'rgba(99, 132, 255, 1)',
+                                    'rgba(192, 192, 75, 1)',
+                                ],
+                                borderWidth: 1,
+                            },
+                        ],
+                    },
+                    data2: {
+                        labels: ['Mexico', 'USA', 'Canada', 'Other', 'Spain'],
+                        datasets: [
+                            {
+                                label: '# of Votes',
+                                data: [70, 15, 5, 5, 5],
+                                backgroundColor: [
+                                    'rgba(206, 86, 255, 1)',
+                                    'rgba(99, 132, 255, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(213, 41, 172, 0.8)'
+                                ],
+                                borderWidth: 1,
+                            },
+                        ],
+                    },
+                    data3: {
+                        labels: ['Mexico', 'USA', 'Canada', 'Other', 'Spain', 'Brazil', 'Argentina', 'Chile'],
+                        datasets: [
+                            {
+                                label: '# of Votes',
+                                data: [70, 10, 5, 5, 3, 2, 2, 3],
+                                backgroundColor: [
+                                    'rgba(206, 86, 255, 1)',
+                                    'rgba(99, 132, 255, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(213, 41, 172, 0.8)',
+                                    'rgba(255, 176, 8, 0.8)',
+                                    'rgba(137, 15, 108, 0.8)',
+                                    'rgba(83, 211, 24, 0.8)'
+                                ],
+                                borderWidth: 1,
+                            },
+                        ],
+                    },
+                },
             },
-        ],
-    },
-
-
-
-    data2: {
-        labels: ['Usa', 'Mexico', 'Canada', 'Other', 'India', 'Oman', 'Qatar', 'Ireland'],
-        datasets: [
-            {
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 6, 3, 4, 7],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(50, 171, 195, 0.8)',
-                    'rgba(172, 213, 41, 0.8)',
-                    'rgba(135, 43, 130, 0.8)',
-                    'rgba(171, 156, 18, 0.8)'
-                ],
-                borderWidth: 1,
+        },
+        youtube: {
+            name: "YouTube",
+            logo: "/assets/images/youtube.svg",
+            lastUpdated: "12/04/24",
+            rankings: [  
+                {
+                    value: "TOP 10%",
+                    name: "Comedy"
+                },
+                {
+                    value: "TOP 15%",
+                    name: "Entertainment"
+                }
+            ],
+            statistics: {
+                subscribers: 10000,
+                totalViews: 25000,
+                totalVideos: 50,
+                averageViews: 5000,
+                likes: 12000,
+                comments: 3000,
             },
-        ],
-    },
-
-
-    data3: {
-        labels: ['Usa', 'Mexico', 'Canada', 'Other', 'India', 'Oman', 'Qatar', 'Ireland', 'Russia', 'Andorra', 'Brazil', 'Spain'],
-        datasets: [
-            {
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 6, 3, 4, 7, 8, 3, 4, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(50, 171, 195, 0.8)',
-                    'rgba(172, 213, 41, 0.8)',
-                    'rgba(135, 43, 130, 0.8)',
-                    'rgba(171, 156, 18, 0.8)',
-                    'rgba(176, 19, 8, 0.8)',
-                    'rgba(141, 176, 8, 0.8)',
-                    'rgba(24, 211, 83, 0.8)',
-                    'rgba(15, 137, 108, 0.8)'
-                ],
-                borderWidth: 1,
+            packageOptions: {
+                "1 Video": "500$",
+                "3 Video": "1200$",
+                "5 Video": "2000$",
             },
-        ],
+            rateSheet: {
+                "Sponsored Video": "700$",
+                "Collaboration": "1000$",
+                "Channel Mention": "500$",
+            },
+            demographics: {
+                gender: {
+                    bars: [
+                        { name: 'Women', value: 52 },
+                        { name: 'Men', value: 48 }
+                    ]
+                },
+                age: {
+                    bars: [
+                        { name: '13-17', value: 25 },
+                        { name: '18-24', value: 35 },
+                        { name: '25-34', value: 30 },
+                        { name: '35+', value: 10 }
+                    ]
+                },
+                countries: {
+                    data1: {
+                        labels: ['Mexico', 'USA', 'Other'],
+                        datasets: [
+                            {
+                                label: '# of Views',
+                                data: [60, 30, 10],
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                ],
+                                borderWidth: 1,
+                            },
+                        ],
+                    },
+                    data2: {
+                        labels: ['Mexico', 'USA', 'Canada', 'Other', 'Spain'],
+                        datasets: [
+                            {
+                                label: '# of Views',
+                                data: [60, 25, 5, 5, 5],
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(213, 41, 172, 0.8)'
+                                ],
+                                borderWidth: 1,
+                            },
+                        ],
+                    },
+                    data3: {
+                        labels: ['Mexico', 'USA', 'Canada', 'Other', 'Spain', 'Brazil', 'Argentina', 'Chile'],
+                        datasets: [
+                            {
+                                label: '# of Views',
+                                data: [60, 20, 5, 5, 3, 2, 2, 3],
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(213, 41, 172, 0.8)',
+                                    'rgba(255, 176, 8, 0.8)',
+                                    'rgba(137, 15, 108, 0.8)',
+                                    'rgba(83, 211, 24, 0.8)'
+                                ],
+                                borderWidth: 1,
+                            },
+                        ],
+                    },
+                },
+            },
+        },
+        
     },
+    quote: "Mi estimado!",
+    industries: ["Comedy", "Entertainment"],
+    video: "/assets/Video/jose_video.mp4", 
+    videoThumb: "/assets/images/jose-thumb.png",
+    about: "José Ramón Calzada Albarrán, also known as josé.ramones, is a TikToker from Querétaro, Mexico. With a talent for creating light-hearted comedy content, José has become a sensation on TikTok, attracting a large following and numerous views on his videos. His unique style and engaging personality have allowed him to carve a niche for himself in the competitive world of social media entertainment."
+};
 
-    gender: {
-        men: 38,
-        women: 46
-    },
-    age: {
-        bar1: 38,
-        bar2: 46,
-        bar3: 66
-    },
-}
 

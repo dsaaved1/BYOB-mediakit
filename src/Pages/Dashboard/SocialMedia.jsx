@@ -1,19 +1,18 @@
 import { Line } from 'rc-progress';
 import React, { memo } from 'react'
 import { Link } from 'react-router-dom';
-import { tik_tok,instragram } from '../../data';
-import { userData } from '../../data';
 import ChartTabs from '../../Components/ChartTabs';
 
 
 function SocialMedia(props) {
 
-    return (<>
-       
+    return (
+    
+    <>
         <section className="info">
             <div className="container">
-                {Object.keys(userData.socialMedia).map((platform, index) => {
-                    const platformData = userData.socialMedia[platform];
+                {Object.keys(props.userData.socialMedia).map((platform, index) => {
+                    const platformData = props.userData.socialMedia[platform];
                     return (
                         <section className="social_data-container" key={index}>
                             <div className="row">
@@ -68,7 +67,8 @@ function SocialMedia(props) {
             </div>
         </section>
 
-    </>)
+    </>
+    )
 }
 
 export default memo(SocialMedia);
