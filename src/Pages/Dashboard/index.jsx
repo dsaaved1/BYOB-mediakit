@@ -5,16 +5,6 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import SocialMedia from "./SocialMedia";
 import {userData } from '../../data';
 
-const formatNumber = (number) => {
-    
-    if (number >= 1000000) {
-        return (number / 1000000).toFixed(1) + 'M';
-    } else if (number >= 1000) {
-        return (number / 1000).toFixed(0) + 'K';
-    } else {
-        return number.toFixed(0);
-    }
-};
 
 function Index() {
 

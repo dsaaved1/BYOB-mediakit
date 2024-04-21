@@ -24,46 +24,45 @@ const options = {
             },
         },
 
-
     }
 };
 
-const colorPairs = [
+const ageColorPairs = [
     { bgColor: '#27d157', baseBgColor: '#d7ebdd' },
     { bgColor: '#2ed3c9', baseBgColor: '#c8efed' },
-    { bgColor: '#5417d7', baseBgColor: '#c4b7e0' }
+    { bgColor: '#5417d7', baseBgColor: '#c4b7e0' },
+    { bgColor: '#d32eb9', baseBgColor: '#efc8e4' },
+    { bgColor: '#f6a821', baseBgColor: '#fceeda' },
+    { bgColor: '#e54b4b', baseBgColor: '#f3c4c4' },
+    { bgColor: '#17a2b8', baseBgColor: '#b7eaff' }
 ];
 
+const genderColorPairs = [
+    { bgColor: '#5417d7', baseBgColor: '#c4b7e0' },
+    { bgColor: '#d32eb9', baseBgColor: '#efc8e4' },
+    { bgColor: '#27d157', baseBgColor: '#d7ebdd' }
+];
 
 
 function SocialMediaDeals() {
     const navigate = useNavigate();
     const location = useLocation();
-    const [PageName, setPageName] = useState(null);
-    const [ChartData, setChartData] = useState({});
+    const [PageData, setPageData] = useState(null);
 
     useEffect(() => {
-        if (location.state !== null) {
-            if (location.state.page_name !== undefined) {
-                setPageName(location.state.page_name);
-
-                if (location.state.page_name === "tik_tok") {
-                    setChartData(userData.socialMedia.tikTok);
-                }
-                else if (location.state.page_name === "instagram") {
-                    setChartData(userData.socialMedia.instagram);
-                }
-                else {
-                    navigate(-1);
-                }
-            }
-            else {
+        if (location.state && location.state.page_name) {
+            const socialMediaData = userData.socialMedia[location.state.page_name];
+            if (socialMediaData) {
+                setPageData(socialMediaData);
+            } else {
                 navigate(-1);
             }
         } else {
             navigate(-1);
         }
-    }, [])
+    }, [location.state, navigate]);
+
+    if (!PageData) return null; 
 
 
 
@@ -71,27 +70,24 @@ function SocialMediaDeals() {
     <>
         <section className="info">
             <div className="container">
+
                 <div className="page_navigation">
-                    <a href="#" onClick={() => navigate(-1)}>
-                        <img src="/assets/images/back.png" alt="" />
+                    <a href="#" onClick={(e) => { e.preventDefault(); navigate(-1); }}>
+                        <img src="/assets/images/back.svg" alt="" />
                     </a>
-                    
                 </div>
+
                 <div className="siteBarnd_wraper">
                     <div className="row">
                         <div className="col-md-3">
                             <div className="barnd_colmn">
                                 <div className="logo">
-                                    {PageName === 'tik_tok' && <img src="/assets/images/tiktok.svg" alt="" />}
-                                    {PageName === 'instagram' && <img src="/assets/images/instragram-logo.svg" alt="" />}
+                                     <img src={PageData.logo} alt={PageData.name} />
                                 </div>
                                 <div className="barnd_text">
-
-                                    {PageName === 'tik_tok' && <h2 className="title">Tik Tok</h2>}
-                                    {PageName === 'instagram' && <h2 className="title">Instagram</h2>}
-
+                                    <h2 className="title">{PageData.name}</h2>
                                     <label className="sub_title">
-                                        Data verified and last updated: 12/02/24
+                                        Data verified and last updated: {PageData.lastUpdated}
                                     </label>
                                 </div>
                             </div>
@@ -100,87 +96,19 @@ function SocialMediaDeals() {
                         
                         <div className="col-md-9">
                            <ul className="social_status-list">
-                               {ChartData.statistics?.followers && (
-                                       <li>
-                                           <label className="title">
-                                               Followers{" "}
-                                               <i className="icon">
-                                                   <img src="/assets/images/followers.svg" alt="" />
-                                               </i>
-                                           </label>
-                                           <span className="count">{ChartData.statistics.followers}k</span>
-                                       </li>
-                                   )}
-
-
-                                   {/* Conditional rendering for Likes */}
-                                   {ChartData.statistics?.likes && (
-                                       <li>
-                                           <label className="title">
-                                               Likes{" "}
-                                               <i className="icon">
-                                                   <img src="/assets/images/Liked.svg" alt="" />
-                                               </i>
-                                           </label>
-                                           <span className="count">{ChartData.statistics.likes}M</span>
-                                       </li>
-                                   )}
-
-
-                                   {/* Conditional rendering for Total Reach */}
-                                   {ChartData.statistics?.totalReach && (
-                                       <li>
-                                           <label className="title">
-                                               Total Reach{" "}
-                                               <i className="icon">
-                                                   <img src="/assets/images/total_reach.svg" alt="" />
-                                               </i>
-                                           </label>
-                                           <span className="count">{ChartData.statistics.totalReach}k</span>
-                                       </li>
-                                   )}
-
-
-                                   {/* Conditional rendering for Engagement */}
-                                   {ChartData.statistics?.engagement && (
-                                       <li>
-                                           <label className="title">
-                                               Engagement{" "}
-                                               <i className="icon">
-                                                   <img src="/assets/images/engagement.svg" alt="" />
-                                               </i>
-                                           </label>
-                                           <span className="count">{ChartData.statistics.engagement}%</span>
-                                       </li>
-                                   )}
-
-
-                                   {/* Conditional rendering for Total Views */}
-                                   {ChartData.statistics?.totalViews && (
-                                       <li>
-                                           <label className="title">
-                                               Total Views{" "}
-                                               <i className="icon">
-                                                   <img src="/assets/images/total_view.svg" alt="" />
-                                               </i>
-                                           </label>
-                                           <span className="count">{ChartData.statistics.totalViews}M</span>
-                                       </li>
-                                   )}
-
-
-                                   {/* Conditional rendering for Total Videos */}
-                                   {ChartData.statistics?.totalVideos && (
-                                       <li>
-                                           <label className="title">
-                                               Total Videos{" "}
-                                               <i className="icon">
-                                                   <img src="/assets/images/play_icon.svg" alt="" />
-                                               </i>
-                                           </label>
-                                           <span className="count">{ChartData.statistics.totalVideos}</span>
-                                       </li>
-                                   )}
+                                {Object.keys(PageData?.statistics).map((stat, idx) => (
+                                    <li key={idx}>
+                                        <label className="title">
+                                            {stat.charAt(0).toUpperCase() + stat.slice(1)}{" "}
+                                            <i className="icon">
+                                                <img src={`/assets/images/${stat}.svg`} alt={stat} />
+                                            </i>
+                                        </label>
+                                        <span className="count">
+                                            {PageData.statistics[stat]}
+                                        </span>
+                                    </li>
+                                ))}
                               
                            </ul>
                        </div>
@@ -188,8 +116,6 @@ function SocialMediaDeals() {
                     </div>
                 </div>
 
-
-               
                 <div className="stat_distribute-panel">
                        <div className="" />
                        <div className="row">
@@ -209,8 +135,8 @@ function SocialMediaDeals() {
                                    </div>
                             
                                    <div className="mt-4">
-                                        {ChartData?.demographics?.age?.bars.map((bar, index) => {
-                                        const colorPair = colorPairs[index % colorPairs.length];
+                                        {PageData.demographics?.age?.bars.map((bar, index) => {
+                                        const colorPair = ageColorPairs[index % ageColorPairs.length];
                                         return (
                                             <div key={index} className={`progress-bar-${index + 1} distribute_progress`}>
                                                 <ProgressBar 
@@ -226,7 +152,7 @@ function SocialMediaDeals() {
                                     </div>
                                     <div className="mt-4">
                                         <ul className="gender_indicator">
-                                            {ChartData?.demographics?.age?.bars.map((bar, index) => (
+                                            {PageData.demographics?.age?.bars.map((bar, index) => (
                                                 <li key={index}>
                                                     <span className={bar.name.replace('+', '').replace('-', '').toLowerCase()} /> {bar.name}
                                                 </li>
@@ -246,36 +172,36 @@ function SocialMediaDeals() {
                                                    </h2>
                                                </div>
                                            </div>
-                                           <div className="col-md-4">
-                                               {/* <input
-                                                   type="text"
-                                                   className="datepicker dataField"
-                                                   placeholder="from"
-                                               /> */}
-                                           </div>
                                        </div>
                                    </div>
                                    <div className="mt-4 genderProgress">
-                                       <div className="genderWomen distribute_progress">
-                                           <ProgressBar completed={ChartData?.demographics?.gender?.women} height={"11px"} bgColor="#5417d7" baseBgColor="#c4b7e0" labelSize={"10px"} />
-                                       </div>
-                                       <div className="genderMen distribute_progress">
-                                           <ProgressBar completed={ChartData?.demographics?.gender?.men} height={"11px"} bgColor="#d32eb9" baseBgColor="#efc8e4" labelSize={"10px"} />
-                                       </div>
-                                   </div>
-                                   <div className="mt-4">
-                                       <ul className="gender_indicator">
-                                           <li>
-                                               <span className="women" /> Women
-                                           </li>
-                                           <li>
-                                               <span className="men" /> Men
-                                           </li>
-                                       </ul>
-                                   </div>
+                                        {PageData.demographics?.gender?.bars.map((bar, index) => {
+                                            const colorPair = genderColorPairs[index % genderColorPairs.length];
+                                            return (
+                                                <div key={index} className={`gender${bar.name} distribute_progress`}>
+                                                    <ProgressBar 
+                                                        completed={bar.value} 
+                                                        height={"11px"} 
+                                                        bgColor={colorPair.bgColor} 
+                                                        baseBgColor={colorPair.baseBgColor} 
+                                                        labelSize={"10px"} 
+                                                    />
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
+                                    <div className="mt-4">
+                                        <ul className="gender_indicator">
+                                            {PageData.demographics?.gender?.bars.map((bar, index) => (
+                                                <li key={index}>
+                                                    <span className={bar.name.toLowerCase()} /> {bar.name}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
                                </div>
                            </div>
-                           <div className="col-md-4  d-flex">
+                           <div className="col-md-4 d-flex">
                                <div className="distribure_row">
                                    <div className="row_header">
                                        <div className="row">
@@ -293,8 +219,7 @@ function SocialMediaDeals() {
                                    </div>
                                    <div className="mt-4 d-flex">
                                        <div className="chart_colmn">
-                                           {/* <div className="pieID pie"></div> */}
-                                           {ChartData?.demographics?.countries?.data1 && <Doughnut data={ChartData?.demographics?.countries?.data1} options={options} width={"210px"} />}
+                                           {PageData.demographics?.countries?.data1 && <Doughnut data={PageData.demographics?.countries?.data1} options={options} width={"210px"} />}
                                        </div>
                                    </div>
                                </div>
@@ -313,7 +238,7 @@ function SocialMediaDeals() {
                                                <h3 className="title">Package Options</h3>
                                                <div className="sheet_table">
                                                    <div className="table_parent">
-                                                        {ChartData?.packageOptions && Object.entries(ChartData.packageOptions).map(([key, value]) => (
+                                                        {PageData.packageOptions && Object.entries(PageData.packageOptions).map(([key, value]) => (
                                                             <div className="row" key={key}>
                                                                 <div className="cell">
                                                                     <span>{key}</span>
@@ -332,7 +257,7 @@ function SocialMediaDeals() {
                                                <h3 className="title">Rate Sheet</h3>
                                                <div className="sheet_table">
                                                    <div className="table_parent">
-                                                        {ChartData?.rateSheet && Object.entries(ChartData.rateSheet).map(([key, value]) => (
+                                                        {PageData.rateSheet && Object.entries(PageData.rateSheet).map(([key, value]) => (
                                                             <div className="row" key={key}>
                                                                 <div className="cell">
                                                                     <span>{key}</span>
@@ -352,7 +277,6 @@ function SocialMediaDeals() {
                        </div>
                </div>
 
-                
 
                 <div className="mt-4 ml-auto">
                     <a href="#" className="btnContact">

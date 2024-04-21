@@ -4,16 +4,22 @@ import ProgressBar from "@ramonak/react-progress-bar";
 import DoughnutChart from './Chart/DoughnutChart';
 
 
-const colorPairs = [
+const ageColorPairs = [
     { bgColor: '#27d157', baseBgColor: '#d7ebdd' },
     { bgColor: '#2ed3c9', baseBgColor: '#c8efed' },
-    { bgColor: '#5417d7', baseBgColor: '#c4b7e0' }
+    { bgColor: '#5417d7', baseBgColor: '#c4b7e0' },
+    { bgColor: '#d32eb9', baseBgColor: '#efc8e4' },
+    { bgColor: '#f6a821', baseBgColor: '#fceeda' },
+    { bgColor: '#e54b4b', baseBgColor: '#f3c4c4' },
+    { bgColor: '#17a2b8', baseBgColor: '#b7eaff' }
 ];
 
-const colorPairs2 = [
+const genderColorPairs = [
     { bgColor: '#5417d7', baseBgColor: '#c4b7e0' },
-    { bgColor: '#d32eb9', baseBgColor: '#efc8e4' }
+    { bgColor: '#d32eb9', baseBgColor: '#efc8e4' },
+    { bgColor: '#27d157', baseBgColor: '#d7ebdd' }
 ];
+
 
 function ChartTabs(props) {
     const [activeTab, setActiveTab] = useState('tab1');
@@ -31,6 +37,7 @@ function ChartTabs(props) {
     return (<>
         <div className="social_stat-wrap">
             <div className="stat_piechart-wrap">
+
                 {sideActiveTab === "country" && <div className="pie_chart-row">
 
                     {activeTab === 'tab1' && <>
@@ -103,7 +110,6 @@ function ChartTabs(props) {
 
                 </div>}
 
-
                 {sideActiveTab === "age" && <>
                     <div className="distribure_row">
                         <div className="row_header">
@@ -120,7 +126,7 @@ function ChartTabs(props) {
                         </div>
                         <div className="mt-4">
                             {props.chartData.demographics?.age?.bars?.map((bar, index) => {
-                                const colorPair = colorPairs[index % colorPairs.length];
+                                const colorPair = ageColorPairs[index % ageColorPairs.length];
                                 return (
                                     <div key={index} className={`progress-bar-${index + 1} distribute_progress`}>
                                         <ProgressBar 
@@ -163,7 +169,7 @@ function ChartTabs(props) {
                         </div>
                         <div className="mt-4 genderProgress">
                             {props.chartData.demographics?.gender?.bars.map((bar, index) => {
-                                const colorPair = colorPairs2[index % colorPairs.length];
+                                const colorPair = genderColorPairs[index % genderColorPairs.length];
                                 return (
                                     <div key={index} className={`gender${bar.name} distribute_progress`}>
                                         <ProgressBar 
@@ -207,6 +213,7 @@ function ChartTabs(props) {
                         </li>}
                     </ul>
                 </div>
+
             </div>
         </div>
     </>)
