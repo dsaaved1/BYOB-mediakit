@@ -1,3 +1,5 @@
+Link to figma file: https://www.figma.com/file/XMQOyeJqtH85Arholjn3cy/BYOB-Interactive-Media-Kit?type=design&node-id=0%3A1&mode=design&t=DW6UAIPTOTuRW80H-1
+
 To run the program:
 npm install --force  
 npm start
