@@ -113,7 +113,7 @@ function Index() {
                         </div>
                     </div>
                     <div className="col-12 col-md-3 mb-4 mb-md-0">
-                        <div className="count globe">
+                        <div className="count">
                             <h4>The 60th most followed account</h4>
                             <small>On Instagram in the world</small>
                             <img
@@ -130,7 +130,7 @@ function Index() {
                             <strong><CountUp end={2524} duration={1.5} />k</strong>
                         </div>
                     </div>
-                    <div className="col-6 col-md-3">
+                    <div className="col-12 col-md-3">
                         <div className="count round-progress">
                             <h4>25% TikTok Follower Growth</h4>
                             <small>In the Last 8 months</small>

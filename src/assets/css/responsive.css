@@ -20,7 +20,6 @@
     main .info {
         width: calc(100% - 0px);
     }
-
     .sidebar.open{
         left: 0;
         z-index: 2;
@@ -31,24 +30,20 @@
 }
 
 @media screen and (max-width: 768px) {
-    
-    .info .count {
-        max-width: 50%;
+    .info .round-progress {
+        max-width: 100%;
     }
     .info .profile h1 {
         max-width: 100%;
         text-align: center;
     }
-
     .info .profile img {
         margin: auto;
     }
-
     .info .info-btm,
     .info .count-top {
         margin-top: 30px;
     }
-
     .info .container-fluid {
         padding: 0px 15px;
     }
@@ -73,7 +68,6 @@
     .stat_sheet-inner .stat_sheet-colmn {
         max-width: 100%;
     }
-
     ul.social_small-data {
         display: flex;
         margin: 50px 0px 20px 0px;
@@ -81,7 +75,6 @@
     ul.socailStat_gridView {
         margin-top: 25px;
     }
-
     .social_stat-wrap {
         margin-top: 50px;
     }
@@ -112,31 +105,30 @@
     ul.socailStat_instaView li {
         text-align: left;
     }
-
-    .CircularProgressbar {
-        width: 50% !important;
-        margin-top: 10px;
+    .info .round-progress .CircularProgressbar {
+        max-width: 100px;
     }
-    .round-progress .progress-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .info .count {
         text-align: center;
     }
-
-    .round-progress .progress-wrapper small {
-        margin-bottom: 10px;
+    .info .count h4 {
+        max-width: 100%;
+    }
+    .info .count img {
+        margin: 20px auto;
+    }
+    .info .count small {
+        display: block;
+        margin: 10px 0;
     }
 }
 @media screen and (max-width: 576px) {
     .info .info-btm h3 {
         font-size: 30px;
     }
-
     .info .name-align h2 {
         font-size: 32px;
     }
-
     .info .profile h1 {
         font-size: 20px;
     }
@@ -149,5 +141,20 @@
     main .sidebar{
        width: 300px;
     }
-    
+    .info .count {
+        text-align: center;
+    }
+    .info .count h4 {
+        max-width: 100%;
+    }
+    .info .count img {
+        margin: 20px auto;
+    }
+    .info .count small {
+        display: block;
+        margin: 10px 0;
+    }
+    .info .round-progress .CircularProgressbar {
+        max-width: 80px;
+    }
 }
